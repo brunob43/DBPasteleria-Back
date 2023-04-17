@@ -1,7 +1,7 @@
-import { Router } from 'express'
-import { getOrden } from '../controllers/ordenController'
+import { Router } from "express"
+const  {getOrden}  = require('../controllers/ordenController')
 
-const router = Router()
+const ordenRouter = Router()
 
-router.get('/', getOrden)
-module.exports = router
+ordenRouter.get('/', getOrden)
+module.exports = ordenRouter

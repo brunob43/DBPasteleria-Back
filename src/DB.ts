@@ -1,10 +1,10 @@
 import express from 'express'
 import morgan from 'morgan'
-import { connDB } from '../database/config';
+// import { connDB } from '../database/config';
 
-import user = require('./routes/user')
-import productos = require('./routes/productos')
-import orden = require('./routes/orden')
+const userRouter = require('./routes/user')
+const productRouter = require('./routes/productos')
+const ordenRouter = require('./routes/orden')
 
 const server = express()
 
@@ -15,11 +15,11 @@ server.use(express.json())
 server.use(morgan('dev'))
 
 // Routes
-server.use('/user', user)
-server.use('/productos', productos)
-server.use('/orden', orden)
+server.use('/user', userRouter)
+server.use('/productos', productRouter)
+server.use('/orden', ordenRouter )
 
 // DB Connection
-connDB()
+// connDB()
 
 module.exports = server

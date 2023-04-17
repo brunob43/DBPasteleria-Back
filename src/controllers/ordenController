@@ -1,6 +1,0 @@
-// import { RequestHandler } from 'express'
-
-export const getOrden = async(_req, res) => {
-  console.log('mas fruta')
-  res.send('fruta')
-}

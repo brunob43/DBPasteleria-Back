@@ -1,4 +1,4 @@
 import { Router } from 'express'
-const router = Router()
-
-module.exports = router
+const userRouter = Router()
+userRouter.get("/", (()=>{console.log("userRouter")}))
+module.exports = userRouter

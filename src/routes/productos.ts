@@ -1,3 +1,4 @@
 import { Router } from 'express'
-const router = Router()
-module.exports = router
+const productRouter = Router()
+productRouter.get("/", (()=>{console.log("productRouter")}))
+module.exports = productRouter
