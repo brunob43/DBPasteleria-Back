@@ -21,6 +21,9 @@ class Product {
     flavor: string
 
     @prop()
+    inStock: boolean
+
+    @prop()
     type: string
 
 }

@@ -16,12 +16,13 @@ async function saveData() {
   image: "Null",
   price: 1000,
   stockDiscount: 12,
+  inStock: true,
   flavor: "Chocolate",
   type: "Cake"
   });
 
   await cake.save()
-  console.log(cake)
+  console.log(cake._id)
 }
 
 saveData()
