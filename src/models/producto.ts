@@ -1,11 +1,28 @@
-export interface Product {
-    id: number;
-    name: string,
-    image: string,
+import {prop, getModelForClass} from "@typegoose/typegoose"
+
+class Product {
+
+    @prop()
+    name: string
+
+    @prop()
     description: string
-    category: string,
-    flavor: string,
-    price: number,
-    mQuantity: number,
-    inStock: boolean
+
+    @prop()
+    image: string
+
+    @prop()
+    price: number
+
+    @prop()
+    stockDiscount: number
+
+    @prop()
+    flavor: string
+
+    @prop()
+    type: string
+
 }
+const ProductModel = getModelForClass(Product)
+export default ProductModel

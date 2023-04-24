@@ -1,25 +1,27 @@
-// import express from 'express'
-// const app = express()
+import { connect } from "mongoose";
+import Product from "./models/producto";
 
-// app.use(express.json())
+async function connectDB() {
+  const db = await connect('mongodb://localhost:27017/Productos')
+  console.log('server is connected to' + " " + db.connection.db.databaseName)
+}
 
-// const PORT = 3000
+connectDB()
 
-// app.get('/', (_req, res) => {
-//   console.log('dulce de leche')
-//   res.send('alfajores')
-// })
+async function saveData() {
+  
+  const cake = new Product({
+  name: "Cake",
+  description:"Chocolate Cake with Chips",
+  image: "Null",
+  price: 1000,
+  stockDiscount: 12,
+  flavor: "Chocolate",
+  type: "Cake"
+  });
 
-// app.listen(PORT, () => {
-//   console.log(`Server runnig on port ${PORT}`)
-// })
-const server = require('./DB');
+  await cake.save()
+  console.log(cake)
+}
 
-
-const PORT = 3000
-
-
-server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
-
+saveData()
