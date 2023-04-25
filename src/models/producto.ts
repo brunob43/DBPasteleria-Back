@@ -2,28 +2,28 @@ import {prop, getModelForClass} from "@typegoose/typegoose"
 
 class Product {
 
-    @prop()
-    name: string
+    @prop({required: true}) // Mongoose
+    name: string // TypeScript
 
-    @prop()
+    @prop({required: true})
     description: string
 
-    @prop()
+    @prop({required: true})
     image: string
 
-    @prop()
+    @prop({required: true})
     price: number
 
-    @prop()
+    @prop({required: true})
     stockDiscount: number
 
-    @prop()
+    @prop({required: true})
     flavor: string
 
-    @prop()
-    inStock: boolean
+    @prop({required: true})
+    inStock: boolean = true
 
-    @prop()
+    @prop({required: true})
     type: string
 
 }
